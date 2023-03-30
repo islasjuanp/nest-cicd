@@ -26,6 +26,10 @@ jobs:
     - run: npm run lint 
     - run: npm run build --if-present
     - run: npm test
-    - name: Running e2e tests
-      run: docker-compose -f docker-compose.yml -f docker-compose.e2e.yml up --abort-on-container-exit --build
+    # e2e tests 
+    - name: Starting Docker dependencies
+      run: npm run docker:start:dependencies
+    - run: npm test:e2e
+    - name: Stopping Docker dependencies
+      run: npm run docker:stop:dependencies
  
