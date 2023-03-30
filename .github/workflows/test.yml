@@ -29,7 +29,6 @@ jobs:
     # Running tests coverage monitor 
     - run: npm test:cov
     - name: Monitor coverage
-        if: ! contains(github.event.pull_request.user.login, 'dependabot[bot]')
         uses: slavcodev/coverage-monitor-action@v1
         with:
           github_token: ${{ secrets.GH_TOKEN }}
