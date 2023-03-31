@@ -10,6 +10,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    permissions:
+      contents: write 
+      checks: write
 
     strategy:
       matrix:
@@ -39,6 +42,7 @@ jobs:
         threshold_warning: 50
         threshold_metric: "lines"
         comment_footer: false
+
     # Running e2e tests 
     - name: Running e2e test with Docker
       run: npm run docker:test
