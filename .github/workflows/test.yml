@@ -15,6 +15,7 @@ jobs:
       checks: write
       pull-requests: write 
       actions: write 
+      statuses: write 
 
     strategy:
       matrix:
