@@ -29,6 +29,8 @@ jobs:
     # Running tests coverage monitor 
     - run: npm run test:cov
     - name: Monitor coverage
+      permissions:
+        pull-requests: write
       uses: slavcodev/coverage-monitor-action@v1
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
